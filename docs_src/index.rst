@@ -2,8 +2,31 @@
 .. include:: ../README.rst
 
 .. toctree::
-  :maxdepth: 2
-
-  api
+  :hidden:
   examples/index
 
+All helper functions are available through ``fplt``,
+but they are organized by submodules.
+For example ``fplt.COLORS`` comes from ``fplt.colors.COLORS``.
+
+.. toctree::
+   :caption: Helper functions
+   :maxdepth: 2
+   :hidden:
+
+   api/colors
+   api/axes
+   api/shapes
+   api/labels
+   api/grids
+   api/misc
+   api/saving
+   api/themes
+
+.. toctree::
+   :caption: Animation helpers
+   :maxdepth: 2
+   :hidden:
+
+   api/animations
+   api/easings

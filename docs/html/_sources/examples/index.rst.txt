@@ -10,13 +10,13 @@ Examples
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Hello World">
+    <div class="sphx-glr-thumbcontainer" tooltip="Showcase">
 
 .. only:: html
 
- .. figure:: /examples/images/thumb/sphx_glr_example_helloworld_thumb.png
+ .. figure:: /examples/images/thumb/sphx_glr_example_thumb.png
 
-     :ref:`sphx_glr_examples_example_helloworld.py`
+     :ref:`sphx_glr_examples_example.py`
 
 .. raw:: html
 
@@ -26,7 +26,7 @@ Examples
 .. toctree::
    :hidden:
 
-   /examples/example_helloworld
+   /examples/example
 .. raw:: html
 
     <div class="sphx-glr-clear"></div>

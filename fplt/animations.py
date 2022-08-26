@@ -1,7 +1,13 @@
+"""
+Helper code to make interactive plots and animations
+"""
+
 import numpy as np
 import matplotlib as mpl
 import matplotlib.animation
 from matplotlib.patches import Rectangle, Ellipse
+from matplotlib.widgets import Slider, CheckButtons
+
 from .misc import dummy
 
 
@@ -207,10 +213,38 @@ def save_anim(anim, name, writerName="ffmpeg", bitrate=1800):
 
 def save_anim_to_pdf(anim, name):
     from tqdm import tqdm
-    from . import save
 
     ms_per_frame = anim._interval
     percentages = list(np.linspace(0, 1, anim.save_count))
     for i, p in tqdm(list(enumerate(percentages))):
         anim._func(p)
         save(anim._fig, name + str(i) + ".pdf")
+
+
+def make_slider(fig, coordinates, label, start, end, init, step):
+    """Makes a new axis and puts a slider at the coordinates
+
+    Coordinates format is ``[left,bottom,width,height]``
+
+    ``label``, ``start``, ``end``, ``init`` and ``step`` are passed to the
+    slider constructor
+
+    Returns the slider handle
+    """
+    slider_ax = fig.add_axes(coordinates)
+    slider = Slider(slider_ax, label, start, end, valinit=init, valstep=step)
+    return slider
+
+
+def make_checkbox(fig, coordinates, label, default=False):
+    """Makes a new axis and puts a slider at the coordinates
+
+    Coordinates format is ``[left,bottom,width,height]``
+
+    ``label`` and ``default`` are passed to the checkbox constructor
+
+    Returns the checkbox handle
+    """
+    checkbox_ax = fig.add_axes(coordinates)
+    checkbox = CheckButtons(checkbox_ax, labels=[label], actives=[default])
+    return checkbox
