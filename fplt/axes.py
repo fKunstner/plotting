@@ -86,3 +86,16 @@ def normalize_y_axis(*axes):
         maxy = np.max([maxy, y2])
     for ax in axes:
         ax.set_ylim([miny, maxy])
+
+def normalize_x_axis(*axes):
+    """Sets the y limits to be the same for all the axes
+
+    Ensures that ``ax1.get_ylim() == ax2.get_ylim()`` for all ``ax1, ax2``
+    """
+    min_val, max_val = np.inf, -np.inf
+    for ax in axes:
+        small, big = ax.get_xlim()
+        min_val = np.min([min_val, small])
+        max_val = np.max([max_val, big])
+    for ax in axes:
+        ax.set_xlim([min_val, max_val])
