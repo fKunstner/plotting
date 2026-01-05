@@ -13,16 +13,16 @@ def circle_points(x, y, r, density=100):
     return xs, ys
 
 
-def ellipse_points(center, A, scaling=1.0, density=100):
+def ellipse_points(center, A, scale=1.0, density=100):
     """Returns the cartesian coordinates of an ellipse centered at center
     with shape given by the matrix A.
 
     Corresponds to the level ``f(x) = 1`` for ``f(x) = (x-c)^T A (x-c)``.
     """
-    CIRCLEGRID = np.linspace(0, 2 * np.pi, density)
-    A = np.linalg.inv(A) * scaling
-    xs = A[0, 0] * np.sin(CIRCLEGRID) + A[0, 1] * np.cos(CIRCLEGRID) + center[0]
-    ys = A[1, 1] * np.cos(CIRCLEGRID) + A[1, 0] * np.sin(CIRCLEGRID) + center[1]
+    angles = np.linspace(0, 2 * np.pi, density)
+    A = np.linalg.inv(A) * scale
+    xs = A[0, 0] * np.sin(angles) + A[0, 1] * np.cos(angles) + center[0]
+    ys = A[1, 1] * np.cos(angles) + A[1, 0] * np.sin(angles) + center[1]
     return xs, ys
 
 

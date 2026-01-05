@@ -8,7 +8,7 @@ import matplotlib.animation
 from matplotlib.patches import Rectangle, Ellipse
 from matplotlib.widgets import Slider, CheckButtons
 
-from .misc import dummy
+from fplt.misc import dummy
 
 
 class Draggable:

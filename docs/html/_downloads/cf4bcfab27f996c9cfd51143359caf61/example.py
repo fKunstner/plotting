@@ -5,7 +5,7 @@ Showcase
 
 import matplotlib.pyplot as plt
 import numpy as np
-import fplt
+from src import fplt
 
 import warnings
 
