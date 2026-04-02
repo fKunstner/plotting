@@ -7,4 +7,5 @@ from fplt.grids import *
 from fplt.misc import *
 from fplt.saving import *
 from fplt.shapes import *
+from fplt.style import *
 
